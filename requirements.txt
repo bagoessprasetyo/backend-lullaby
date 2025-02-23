@@ -1,0 +1,47 @@
+# requirements.txt
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6
+python-dotenv==1.0.0
+transformers==4.37.2
+torch==2.1.2
+torchaudio==2.1.2
+librosa==0.10.1
+soundfile==0.12.1
+pydub==0.25.1
+python-jose==3.3.0
+langchain==0.1.0
+langchain-core==0.1.10
+langchain-mistralai==0.0.4
+TTS==0.22.0
+tqdm==4.66.1
+
+# runtime.txt
+python-3.9.18
+
+# render.yaml
+services:
+  - type: web
+    name: lullaby-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: HUGGINGFACE_API_TOKEN
+        sync: false
+      - key: MISTRAL_API_KEY
+        sync: false
+
+# Dockerfile
+FROM python:3.9.18-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
