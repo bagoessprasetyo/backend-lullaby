@@ -301,7 +301,7 @@ Scenes to connect:
 
 Story Requirements:
 - Theme: Magical and soothing adventure flowing naturally between scenes
-- Length: Approximately 20 seconds when read aloud
+- Length: Approximately 1 minutes when read aloud
 - Structure: Create a flowing narrative with gentle transitions between scenes
 - Characters: Use the provided character names naturally in the story
 
@@ -781,12 +781,12 @@ if __name__ == "__main__":
     try:
         # List of image paths
         IMAGE_PATHS = [
-            "sample.JPG",
-            "sample2.jpg"
+            "bear.jpeg"
         ]
         ACTOR_NAMES = [
-            "Bagus",
-            "Auliya"
+            "The Sleepy Bear",
+            "The Gentle Owl",
+            "The Daring Eagle"
         ]
         VOICE_PATH = "reference_voice.wav"
         BACKGROUND_PATH = "background.mp3"

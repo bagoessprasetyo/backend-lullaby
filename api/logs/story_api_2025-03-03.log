@@ -1,0 +1,3 @@
+2025-03-03 19:27:54.303 | ERROR    | services.auth_service:decode_jwt:39 - JWT error: Not enough segments
+2025-03-03 19:27:54.679 | ERROR    | services.auth_service:decode_jwt:39 - JWT error: Not enough segments
+2025-03-03 19:27:54.693 | ERROR    | services.auth_service:decode_jwt:39 - JWT error: Not enough segments
